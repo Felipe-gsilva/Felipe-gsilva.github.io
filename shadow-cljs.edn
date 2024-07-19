@@ -1,0 +1,14 @@
+;; shadow-cljs configuration
+{:source-paths
+ ["src"
+  "src/main"
+  "src/test"]}
+
+ :dependencies
+ []
+
+ :dev-http []
+
+ :builds
+ {:frontend {:target :browser 
+             :modules {:main {:init-fn main.portfolio.core/init}}}}
