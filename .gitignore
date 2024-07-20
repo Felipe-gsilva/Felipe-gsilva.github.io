@@ -19,7 +19,4 @@ pom.xml.asc
 .hgignore
 .hg/
 .lsp/
-<<<<<<< HEAD
-.clj-kondo/
-=======
->>>>>>> refs/remotes/origin/main
+.cpcache

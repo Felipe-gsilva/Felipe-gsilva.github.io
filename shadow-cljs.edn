@@ -1,14 +1,13 @@
 ;; shadow-cljs configuration
-{:source-paths
- ["src"
-  "src/main"
-  "src/test"]}
+{:deps true
 
- :dependencies
- []
+  :nrepl {:port 8001}
 
- :dev-http []
+ :dev-http [8080 "/target"]
 
  :builds
- {:frontend {:target :browser 
-             :modules {:main {:init-fn main.portfolio.core/init}}}}
+ {:frontend {:output-to "target/core.js"
+             :asset-path "."
+             :target :node-script
+             :main com.felipegsilva.core/main!
+             :devtools {:after-load com.felipegsilva.core/reload!}}}}
