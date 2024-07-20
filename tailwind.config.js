@@ -2,17 +2,17 @@
 module.exports = {
   content: ['./resources/js/app.js'],
   theme: {
-    colors: {
-      'bg1': '#211e20',
-      'bg2': '#555568',
-      'fg1': '#e9efec',
-      'fg2': '#',
-      'hl': '#fff'
-    },
+      colors: {
+        'bg1': '#1A1826',
+        'bg2': '#555568',
+        'fg1': '#e9efec',
+        'fg2': '#ffffff',
+        'hl1': '#8EBABF'
+      },
     extend: {
-      fontFamily: {
-        'NerdFont Jetbrains': ['Abril Fatface', 'serif']
-      }
+      'font-family': {
+        'body': '"Jetbrains Mono"',
+      },
     },
   },
   plugins: [],
