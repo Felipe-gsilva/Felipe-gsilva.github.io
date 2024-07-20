@@ -9,7 +9,7 @@
   "home page"
   []
   (<> 
-    (d/main {:class "w-full h-full"}
+    (d/main {:class (str "w-full h-full")}
             ($ app/app) 
             (d/div 
               {:class (str "w80 h80")}

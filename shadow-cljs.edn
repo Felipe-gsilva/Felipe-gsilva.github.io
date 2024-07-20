@@ -7,10 +7,9 @@
              :asset-path "."
              :target :browser
              :modules {:app {:init-fn com.felipegsilva.core/main!}}
-             :devtools {:after-load com.felipegsilva.core/reload!
-                        :http-root "resources/target"
+             :dev {:build-hooks [(teknql.tailwind/start-watch!)]}
+             :devtools {:http-root "./"
                         :http-port 3000}
-             :build-hooks [(teknql.tailwind/start-watch!)]
              :tailwind/output "resources/css/core.css"
              :tailwind/files {:base-path "./"
                               :tailwind-css "resources/css/bundle.css"}}}}
