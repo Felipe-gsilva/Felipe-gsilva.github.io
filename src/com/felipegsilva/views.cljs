@@ -1,8 +1,8 @@
 (ns com.felipegsilva.views 
   (:require 
-    ["felipegsilva.components.app" :as app]
-    ["felipegsilva.components.navbar" :as navbar]
-    ["helix.dom" :as d]
+    [com.felipegsilva.components.app :as app]
+    [com.felipegsilva.components.navbar :as navbar]
+    [helix.dom :as d]
     [helix.core :refer [defnc $ <>]]))
 
 (defnc home 
@@ -12,4 +12,5 @@
     (d/main {:class "w-full h-full"}
             ($ app/app) 
             (d/div 
-              {:class {str ""}}))))
+              {:class (str "w80 h80")}
+              (d/p "carlos")))))

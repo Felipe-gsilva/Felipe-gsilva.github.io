@@ -1,13 +1,16 @@
 ;; shadow-cljs configuration
 {:deps true
-
-  :nrepl {:port 8001}
-
- :dev-http [8080 "/target"]
-
+ :nrepl {:port 8001}
+ :dev-http [8080 "/resources/target"]
  :builds
- {:frontend {:output-to "target/core.js"
+ {:frontend {:output-dir "resources/js"
              :asset-path "."
-             :target :node-script
-             :main com.felipegsilva.core/main!
-             :devtools {:after-load com.felipegsilva.core/reload!}}}}
+             :target :browser
+             :modules {:app {:init-fn com.felipegsilva.core/main!}}
+             :devtools {:after-load com.felipegsilva.core/reload!
+                        :http-root "resources/target"
+                        :http-port 3000}
+             :build-hooks [(teknql.tailwind/start-watch!)]
+             :tailwind/output "resources/css/core.css"
+             :tailwind/files {:base-path "./"
+                              :tailwind-css "resources/css/bundle.css"}}}}

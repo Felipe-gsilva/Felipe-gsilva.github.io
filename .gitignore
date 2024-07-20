@@ -3,7 +3,7 @@ public/js
 
 /target
 /checkouts
-/src/gen
+/resources/js/cljs-runtime
 
 pom.xml
 pom.xml.asc
@@ -20,3 +20,4 @@ pom.xml.asc
 .hg/
 .lsp/
 .cpcache
+/.clj-kondo
