@@ -9,6 +9,8 @@
   "home page"
   []
   (<> 
-    (d/main {:class "w-full h-full"}
-            ($ app/app) 
-            (d/div ($ navbar/navbar)))))
+    (d/div {:class "flex flex-row"}
+           (d/div {:class "w-[5%] h-screen"} 
+                  ($ navbar/navbar))
+           (d/main {:class "w-[95%] h-screen"}
+                   ($ app/main)))))

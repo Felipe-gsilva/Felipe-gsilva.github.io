@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ['./resources/js/app.js'],
+  content: ['./src/**/*.{html,js}'], 
   theme: {
       colors: {
         'bg1': '#1A1826',
@@ -9,10 +9,10 @@ module.exports = {
         'fg2': '#ffffff',
         'hl1': '#8EBABF'
       },
+    fontFamily: {
+      'jet': ["Jetbrains Mono"],
+    },
     extend: {
-      'font-family': {
-        'body': '"Jetbrains Mono"',
-      },
     },
   },
   plugins: [],

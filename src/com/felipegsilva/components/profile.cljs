@@ -3,5 +3,4 @@
             [helix.dom :as d]))
 
 (defnc pfp [] 
-  (d/img "resources/img/pfp.jpg")
-  )
+  (d/img {:class "rounded-full w-80 shadow-md" :src "resources/assets/img/beltrao.png"}))
