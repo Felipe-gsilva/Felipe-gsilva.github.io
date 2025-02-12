@@ -9,8 +9,8 @@
 (defnc home
   "home page" []
   (<>
-   (d/body {:class "h-screen bg-gray-50"}
-    (d/div  {:class "flex flex-col h-full"}
-            ($ navbar)
-            ($ app/header)
-            ($ footer)))))
+   (d/body {:class "h-screen w-screen bg-gray-50 flex justify-center items-center"}
+           (d/div  {:class "flex flex-col h-full w-3/4 justify-center items-center"}
+                   ($ navbar)
+                   ($ app/header)
+                   ($ footer)))))

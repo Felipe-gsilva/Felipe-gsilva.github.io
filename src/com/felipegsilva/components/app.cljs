@@ -10,7 +10,7 @@
 
 (defnc header []
   (d/div {:class "w-full h-full flex flex-col justify-center items-center p-8"}
-         (d/div {:class " flex flex-row w-3/4 h-1/3 justify-center items-center space-x-6  space-y-8"}
+         (d/div {:class " flex flex-row h-1/3 justify-center items-center  space-y-8"}
                 (d/div {:class "h-full flex flex-col justify-center"}
                        (d/div {:class "py-4"}
                               (d/span {:class "flex space-x-2 text-6xl mb-2 "}
@@ -34,7 +34,7 @@
                                                         (d/a {:href "https://github.com/Felipe-gsilva"
                                                               :target "_blank"} "github")
                                                         ($ svg/github)))
-                                      (d/button {:class "hover:underline rounded-lg border-black w-20 hover:text-yellow-600 transition-all duration-75"}
+                                      (d/button {:class "hover:underline rounded-lg border-black p-4 hover:text-yellow-600 transition-all duration-75"}
                                                 (d/span {:class "flex space-x-2 justify-center items-center"}
                                                         (d/a
                                                          {:href "https://www.linkedin.com/in/felipe-gsilva/"
