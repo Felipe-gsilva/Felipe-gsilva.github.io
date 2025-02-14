@@ -1,11 +1,12 @@
 (ns com.felipegsilva.core
-  (:require 
-    ["react" :as react]
-    ["react-dom/client" :as react-dom]
-    [refx.alpha :as refx]
-    [helix.core :refer [$]]
-    [com.felipegsilva.views :as views]))
-
+  (:require
+   ["react" :as react]
+   ["react-dom/client" :as react-dom]
+   [refx.alpha :as refx]
+   [helix.core :refer [$]]
+   [com.felipegsilva.events]
+   [com.felipegsilva.subs]
+   [com.felipegsilva.views :as views]))
 
 (defonce app-root
   (-> js/document
@@ -25,6 +26,8 @@
 
 (defn main!
   "initial point"
-  [] 
-  (render))
+  []
+  (refx/dispatch-sync [:app/initialize-db])
+  (render)
+  (reload!))
 

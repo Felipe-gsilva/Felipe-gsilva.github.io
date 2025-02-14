@@ -27,12 +27,6 @@ module.exports = {
         kiwi: {"main": "#7FE04A", "bg": "#2F362C"},
         warning: {"50": "#fde8e8", "900": "#F05252"},
         success: {"50": "#def7ec", "700": "#046c4e"},
-        gray: { "700": "#808080", "800": "#5e5e5e" }, 
-      },
-      fontFamily: {
-        'sans': ['Inter', 'ui-sans-serif', 'system-ui', '-apple-system', 'system-ui', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'Noto Sans', 'sans-serif', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'],
-        'body': ['Inter', 'ui-sans-serif', 'system-ui', '-apple-system', 'system-ui', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'Noto Sans', 'sans-serif', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'],
-        'mono': ['JetBrains Mono', 'ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', 'Liberation Mono', 'Courier New', 'monospace']
       },
       transitionProperty: {
         'width': 'width'
