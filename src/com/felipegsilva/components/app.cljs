@@ -40,7 +40,7 @@
 
                        (d/div {:class " flex flex-row h-1/3 justify-start items-center md:space-x-6 "}
                               (d/span {:class "md:space-x-4"}
-                                      (d/button {:class "p-2 border rounded-lg border-black text-black hover:border-yellow-600 hover:bg-white hover:text-yellow-600 transition-all duration-75 "}
+                                      (d/button {:class "p-2 border rounded-lg border-black dark:border-gray-100 hover:border-yellow-600 hover:bg-white hover:text-yellow-600 transition-all duration-75 "}
                                                 (d/span {:class "flex space-x-2"}
                                                         (d/a {:href "https://github.com/Felipe-gsilva"
                                                               :target "_blank"} "github")

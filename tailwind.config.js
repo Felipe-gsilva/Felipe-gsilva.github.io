@@ -1,6 +1,9 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ['./src/**/*.{html,js}'], 
+  content: [
+    './src/**/*.{html,js,cljs,cljc}',  // Added cljs and cljc
+  ],
+  darkMode: 'class',
   theme: {
     fontSize: {
       xs: ['0.75rem', { lineHeight: '1rem' }],
@@ -41,9 +44,7 @@ module.exports = {
     },
     fontFamily: {
       'jet': ["Jetbrains Mono"],
-    },
-    extend: {
-    },
+    }
   },
   plugins: [],
 }
