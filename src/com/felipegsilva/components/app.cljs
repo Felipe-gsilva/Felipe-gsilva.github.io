@@ -10,7 +10,7 @@
 
 (defnc app []
   (d/div {:id "Header"
-          :class "w-full h-full flex flex-col justify-center items-center p-8 transition-all duration-75"}
+          :class "w-full h-full flex flex-col justify-center items-center p-8 transition-all duration-75 text-gray-100 dark:text-gray-800"}
          (d/div {:class "flex flex-row md:h-2/3 h-1/3 justify-center items-center md:space-y-8 space-y-16 "}
                 (d/div {:class "h-full flex flex-col justify-center"}
                        (d/div {:class "py-4"}
