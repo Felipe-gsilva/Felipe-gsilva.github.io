@@ -9,11 +9,14 @@
   (let [[theme set-theme] (hooks/use-state false)]
     (d/div {:class "h-16 w-full flex justify-center items-center justify-between p-8"}
            (d/span {:class "h-full space-x-4 flex justify-center items-center"}
-                   (d/button {:class "hover:underline transition-all duration-75"} "navbar")
-                   (d/button {:class "hover:underline transition-all duration-75"} "navbar")
-                   (d/button {:class "hover:underline transition-all duration-75"} "navbar"))
+                   (d/button {:class "hover:underline hover:text-yellow-600 transition-all duration-75"} "Home")
+                   (d/button {:class "hover:underline hover:text-yellow-600 transition-all duration-75"} "About"))
            (d/button {:on-click #(set-theme (not theme))
-                      :class "transition-all duration-75 hover:text-gray-500"}
+                      :class (str "transition-all duration-75 hover:scale-125 "
+                                  (if theme
+                                    "hover:text-yellow-600 "
+                                    "hover:text-slate-600 "))}
+
                      (if theme
                        ($ svg/sun)
                        ($ svg/moon))))))

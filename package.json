@@ -11,6 +11,7 @@
     "tailwindcss": "^3.4.6"
   },
   "dependencies": {
+    "@fontsource/jetbrains-mono": "^5.1.2",
     "react-dom": "^18.3.1",
     "react-refresh": "^0.14.2",
     "use-sync-external-store": "1.2.2"
