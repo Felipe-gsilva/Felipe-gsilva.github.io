@@ -7,7 +7,7 @@
 
 (defnc navbar []
   (let [[theme set-theme] (hooks/use-state false)]
-    (d/div {:class "h-16 w-full flex justify-center items-center justify-between p-8"}
+    (d/div {:class "h-8 md:h-16 w-full flex justify-center items-center justify-between p-8"}
            (d/span {:class "h-full space-x-4 flex justify-center items-center"}
                    (d/button {:class "hover:underline hover:text-yellow-600 transition-all duration-75"} "Home")
                    (d/button {:class "hover:underline hover:text-yellow-600 transition-all duration-75"} "About"))

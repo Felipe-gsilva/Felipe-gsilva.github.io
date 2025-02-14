@@ -6,7 +6,7 @@
    [helix.core :refer [defnc <> $]]))
 
 (defnc blink []
-  (d/p  ">"))
+  (d/p {:class "hidden md:flex"} ">"))
 
 (defnc header []
   (d/div {:id "Header"
@@ -14,7 +14,7 @@
          (d/div {:class "flex flex-row md:h-2/3 h-1/3 justify-center items-center md:space-y-8 space-y-16 "}
                 (d/div {:class "h-full flex flex-col justify-center"}
                        (d/div {:class "py-4"}
-                              (d/span {:class "flex space-x-2 md:text-6xl text-5xl mb-2 "}
+                              (d/span {:class "flex md:space-x-2 md:text-6xl text-5xl mb-2 "}
                                       ($ blink)
                                       (d/h1   "Felipe Gomes da Silva"))
                               (d/div {:class "flex w-full "}
