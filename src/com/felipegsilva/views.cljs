@@ -5,22 +5,35 @@
    [com.felipegsilva.components.footer :refer [footer]]
    [helix.core :refer [defnc $ <>]]
    [helix.dom :as d]
-   [helix.hooks :as hooks]))
+   [helix.hooks :as hooks]
+   [refx.alpha :as refx]))
 
 (defnc home
   "home page" []
-  (let [[is-dark? set-dark] (hooks/use-state (= (.. js/localStorage (getItem "theme")) "dark"))
-        toggle-dark #(let [new-theme (if is-dark? "light" "dark")]
-                      (set-dark (not is-dark?))
-                      (.. js/localStorage (setItem "theme" new-theme)))]
-    (hooks/use-effect [is-dark?]
-      (.. js/document -documentElement -classList
-          (toggle "dark" is-dark?)))
-    (<>
-     (d/div {:class (str "min-h-dvh lg:h-screen w-screen bg-gray-50 flex flex-col items-center font-mono overflow-hidden "
-                         "dark:bg-gray-800 dark:text-gray-100")}
-             (d/div {:class "flex flex-col w-full md:w-3/4 flex-1"}
-                    ($ navbar {:toggle-dark toggle-dark :is-dark? is-dark?})
-                    ($ app)
-                    #_($ footer))))))
+  (let [theme (refx/use-sub [:app/theme])
+        dark? (= theme "dark")]
 
+    (hooks/use-effect
+      :once
+      (let [stored-theme (or (.. js/localStorage (getItem "theme"))
+                             "light")]
+        (refx/dispatch-sync [:app/set-theme stored-theme])))
+
+    (hooks/use-effect
+      [theme]
+      (.. js/localStorage (setItem "theme" theme))
+      (let [class-list (.. js/document -documentElement -classList)]
+        (if (= theme "dark")
+          (.add class-list "dark")
+          (.remove class-list "dark"))))
+
+    (<>
+     (d/div {:class (str "min-h-dvh lg:h-screen w-screen font-mono overflow-hidden  "
+                         "flex flex-col items-center duration-125 transition-all "
+                         (if dark?
+                           "bg-black text-white "
+                           "bg-gray-50 text-black  "))}
+            (d/div {:class "flex flex-col w-full md:w-3/4 flex-1"}
+                   ($ navbar {:is-dark? dark?})
+                   ($ app  {:is-dark? dark?})
+                   ($ footer))))))

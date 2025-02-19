@@ -8,9 +8,9 @@
 (defnc blink []
   (d/p {:class "hidden md:flex"} ">"))
 
-(defnc app []
+(defnc app [{:keys [is-dark?]}]
   (d/div {:id "Header"
-          :class "w-full h-full flex flex-col justify-center items-center p-8 transition-all duration-75"}
+          :class "w-full h-full flex flex-col justify-center items-center p-8 transition-all duration-75 "}
          (d/div {:class "flex flex-row md:h-2/3 h-1/3 justify-center items-center md:space-y-8 space-y-16 "}
                 (d/div {:class "h-full flex flex-col justify-center"}
                        (d/div {:class "py-4"}
@@ -40,7 +40,10 @@
 
                        (d/div {:class " flex flex-row h-1/3 justify-start items-center md:space-x-6 "}
                               (d/span {:class "md:space-x-4"}
-                                      (d/button {:class "p-2 border rounded-lg border-black dark:border-gray-100 hover:border-yellow-600 hover:bg-white hover:text-yellow-600 transition-all duration-75 "}
+                                      (d/button {:class (str "p-2 border rounded-lg hover:border-yellow-600 hover:text-yellow-600 transition-all duration-75 "
+                                                             (if is-dark?
+                                                               "border-gray-100 hover:bg-gray-900 "
+                                                               "border-black hover:bg-white "))}
                                                 (d/span {:class "flex space-x-2"}
                                                         (d/a {:href "https://github.com/Felipe-gsilva"
                                                               :target "_blank"} "github")
