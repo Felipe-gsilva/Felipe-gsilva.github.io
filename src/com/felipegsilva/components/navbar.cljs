@@ -11,7 +11,7 @@
                  (d/button {:class "hover:underline hover:text-yellow-600 transition-all duration-75"} "Home")
                  (d/button {:class "hover:underline hover:text-yellow-600 transition-all duration-75"} "About"))
          (d/button {:on-click #(refx/dispatch-sync [:app/set-theme (if is-dark? "light" "dark")])
-                    :class (str "transition-all duration-125 "
+                    :class (str "transition-all duration-125 hover:scale-125 "
                                 (if is-dark?
                                   "hover:text-yellow-600"
                                   "hover:text-slate-600"))}
