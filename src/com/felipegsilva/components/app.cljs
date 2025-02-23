@@ -42,12 +42,13 @@
                               (d/span {:class "md:space-x-4"}
                                       (d/button {:class (str "p-2 border rounded-lg hover:border-yellow-600 hover:text-yellow-600 transition-all duration-75 "
                                                              (if is-dark?
-                                                               "border-gray-100 hover:bg-gray-900 "
+                                                               "border-gray-100 "
                                                                "border-black hover:bg-white "))}
-                                                (d/span {:class "flex space-x-2"}
-                                                        (d/a {:href "https://github.com/Felipe-gsilva"
-                                                              :target "_blank"} "github")
-                                                        ($ svg/github)))
+                                                (d/a {:href "https://github.com/Felipe-gsilva"
+                                                      :target "_blank"
+                                                      :class "space-x-2 flex"}
+                                                             (d/p "github")
+                                                             ($ svg/github)))
                                       (d/button {:class "underline rounded-lg border-black p-4 hover:text-blue-600 transition-all duration-75"}
                                                 (d/span {:class "flex justify-center items-center"}
                                                         (d/a
