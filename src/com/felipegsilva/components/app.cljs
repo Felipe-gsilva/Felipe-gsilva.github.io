@@ -31,23 +31,23 @@
 
                        (d/span {:class "lg:text-xl text-2xl py-4 md:tracking-normal tracking-wide"}
                                (d/p
-                                "Software engineer, not that good musician and beatmaker, who loves low level programming and a rookie in the amazing world of lisp and clojure. Currently under a Computer Science degree at " (d/a {:class "underline hover:text-yellow-600 transition-all duration-75"
-                                                                                                                                                                                                                                      :href "https://www2.unesp.br/"
+                                "Software developer who loves low level programming and, now, a rookie in the amazing world of lisp and clojure. Currently under a Computer Science degree at " (d/a {:class "underline hover:text-yellow-600 transition-all duration-75"
                                                                                                                                                                                                                                       :target "_blank"} "Unesp")
-                                ". I pretty much love my girlfriend, music, playing and wacthing soccer, working out, films and games. "))
+                                ". I pretty much love my girlfriend, listening to mid songs, playing and watching soccer, movies and games. "))
                        (d/span {:class "lg:text-xl text-2xl py-4 md:tracking-normal tracking-wide"}
-                               (d/p "For now, I'm working on open source solutions at my job, respecting my belief that software should be free, reproducable and, at all circunstances, built with love and not only by its later revenue."))
+                               (d/p ""))
 
                        (d/div {:class " flex flex-row h-1/3 justify-start items-center md:space-x-6 "}
                               (d/span {:class "md:space-x-4"}
                                       (d/button {:class (str "p-2 border rounded-lg hover:border-yellow-600 hover:text-yellow-600 transition-all duration-75 "
                                                              (if is-dark?
-                                                               "border-gray-100 hover:bg-gray-900 "
+                                                               "border-gray-100 "
                                                                "border-black hover:bg-white "))}
-                                                (d/span {:class "flex space-x-2"}
-                                                        (d/a {:href "https://github.com/Felipe-gsilva"
-                                                              :target "_blank"} "github")
-                                                        ($ svg/github)))
+                                                (d/a {:href "https://github.com/Felipe-gsilva"
+                                                      :target "_blank"
+                                                      :class "space-x-2 flex"}
+                                                     (d/p "github")
+                                                     ($ svg/github)))
                                       (d/button {:class "underline rounded-lg border-black p-4 hover:text-blue-600 transition-all duration-75"}
                                                 (d/span {:class "flex justify-center items-center"}
                                                         (d/a
