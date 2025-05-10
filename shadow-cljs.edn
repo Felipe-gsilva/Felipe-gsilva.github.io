@@ -3,11 +3,11 @@
  :nrepl {:port 8001}
  :builds
  {:app {:target :browser
-        :output-dir "resources/js"
+        :output-dir "public/resources/js"
         :modules {:app {:init-fn com.felipegsilva.core/main!}}
         :dev {:build-hooks [(teknql.tailwind/start-watch!)]}
         :release {:build-hooks [(teknql.tailwind/compile-release!)]}
-        :devtools {:http-root "./"
+        :devtools {:http-root "public/"
                    :http-port 3000}
-        :tailwind/output "resources/css/bundle.css"
-        :tailwind/files {:tailwind-css "resources/css/index.css"}}}}
+        :tailwind/output "public/resources/css/bundle.css"
+        :tailwind/files {:tailwind-css "public/resources/css/index.css"}}}}

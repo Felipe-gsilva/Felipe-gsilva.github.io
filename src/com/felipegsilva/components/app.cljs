@@ -31,7 +31,7 @@
 
                        (d/span {:class "lg:text-xl text-2xl py-4 md:tracking-normal tracking-wide"}
                                (d/p
-                                "Software engineer, not that good musicist and beatmaker, who loves low level programming and a rookie in the amazing world of lisp and clojure. Currently under a Computer Science degree at " (d/a {:class "underline hover:text-yellow-600 transition-all duration-75"
+                                "Software engineer, not that good musician and beatmaker, who loves low level programming and a rookie in the amazing world of lisp and clojure. Currently under a Computer Science degree at " (d/a {:class "underline hover:text-yellow-600 transition-all duration-75"
                                                                                                                                                                                                                                       :href "https://www2.unesp.br/"
                                                                                                                                                                                                                                       :target "_blank"} "Unesp")
                                 ". I pretty much love my girlfriend, music, playing and wacthing soccer, working out, films and games. "))
