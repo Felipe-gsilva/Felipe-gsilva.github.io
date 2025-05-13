@@ -18,22 +18,24 @@
                                       ($ blink)
                                       (d/h1   "Felipe Gomes da Silva"))
                               (d/div {:class "flex w-full "}
-                                     (d/span {:class "flex md:space-x-2 md:flex-row flex-col md:items-center"}
-                                             (d/span {:class "flex space-x-2 md:text-md text-xl"}
+                                     (d/span {:class " w-full flex flex-col md:flex-row md:space-x-2 justify-between items-between"}
+                                             (d/span {:class "flex flex-col space-y-2 md:text-md text-xl"}
                                                      (d/p {:class "italic"} "product engineer at "
                                                           (d/a {:class "underline transition-all duration-75 hover:text-yellow-600"
-                                                                :target "_blank" :href "https://www.moclojer.com/"} " Moclojer")))
+                                                                :target "_blank" :href "https://www.moclojer.com/"} " Moclojer"))
 
-                                             (d/div {:class "hidden lg:flex"} "|")
-                                             (d/p {:class "italic"} "C, C++, Clojure and Java"))))
+                                                     (d/p {:class "italic"} "full-stack developer "
+                                                          (d/a {:class "underline transition-all duration-75 hover:text-yellow-600"
+                                                                :target "_blank" :href "https://www.passagemdeonibus.com"} " passagemdeonibus.com")))
+                                             (d/p {:class "italic"} "C, C++, Clojure, Java and Python"))))
 
                        ($ line-break)
 
                        (d/span {:class "lg:text-xl text-2xl py-4 md:tracking-normal tracking-wide"}
                                (d/p
                                 "Software developer who loves low level programming and, now, a rookie in the amazing world of lisp and clojure. Currently under a Computer Science degree at " (d/a {:class "underline hover:text-yellow-600 transition-all duration-75"
-                                                                                                                                                                                                                                      :target "_blank"} "Unesp")
-                                ". I pretty much love my girlfriend, listening to mid songs, playing and watching soccer, movies and games. "))
+                                                                                                                                                                                                      :target "_blank"} "Unesp")
+                                ". I love my girlfriend, listening to a really good range of songs, playing and watching soccer, movies and games. "))
                        (d/span {:class "lg:text-xl text-2xl py-4 md:tracking-normal tracking-wide"}
                                (d/p ""))
 
