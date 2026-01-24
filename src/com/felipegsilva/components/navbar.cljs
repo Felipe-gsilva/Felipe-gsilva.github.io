@@ -9,7 +9,9 @@
   (d/nav {:class "h-8 md:h-16 w-full flex justify-center items-center justify-between p-8 text-black dark:text-gray-500"}
          (d/span {:class "h-full space-x-4 flex justify-center items-center"}
                  (d/button {:class "hover:underline hover:text-yellow-600 transition-all duration-75"
-                            :on-click (fn [] (js/console.log "WIP"))} "Home")
+                            :on-click #(refx/dispatch-sync [:app/set-route nil])} "Home")
+                 (d/button {:class "hover:underline hover:text-yellow-600 transition-all duration-75"
+                            :on-click #(refx/dispatch-sync [:app/set-route :projects])} "Projects")
                  (d/button {:class "hover:underline hover:text-yellow-600 transition-all duration-75"} "Blog [WIP]"))
          (d/button {:on-click #(refx/dispatch-sync [:app/set-theme (if is-dark? "light" "dark")])
                     :class (str "transition-all duration-125 hover:scale-125 "

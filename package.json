@@ -1,9 +1,9 @@
 {
-  "name": "cljs-test",
+  "name": "felipe-gsilva.github.io",
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "watch": "npx shadow-cljs watch app ",
+    "watch": "npx shadow-cljs watch app",
     "release": "npx shadow-cljs release app"
   },
   "devDependencies": {

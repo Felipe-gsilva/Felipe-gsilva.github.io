@@ -3,6 +3,7 @@
    [com.felipegsilva.components.app :refer [app]]
    [com.felipegsilva.components.navbar :refer [navbar]]
    [com.felipegsilva.components.footer :refer [footer]]
+   [com.felipegsilva.components.projects :as projects]
    [helix.core :refer [defnc $ <>]]
    [helix.dom :as d]
    [helix.hooks :as hooks]
@@ -16,7 +17,7 @@
     (hooks/use-effect
       :once
       (let [stored-theme (or (.. js/localStorage (getItem "theme"))
-                             "light")]
+                             "dark")]
         (refx/dispatch-sync [:app/set-theme stored-theme])))
 
     (hooks/use-effect
@@ -35,5 +36,8 @@
                            "bg-gray-50 text-black  "))}
             (d/div {:class "flex flex-col w-full md:w-3/4 flex-1"}
                    ($ navbar {:is-dark? dark?})
-                   ($ app  {:is-dark? dark?})
+                   (d/div {:class "flex-1 w-full overflow-y-auto min-h-0"}
+                          (if (= (refx/use-sub [:app/current-route]) :projects) 
+                            ($ projects/projects-page {:is-dark? dark?})
+                            ($ app  {:is-dark? dark?})))
                    ($ footer))))))
