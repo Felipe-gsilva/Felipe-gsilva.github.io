@@ -2,6 +2,7 @@
   (:require
    [com.felipegsilva.components.line :refer [line-break]]
    [com.felipegsilva.components.svg :as svg]
+   [com.felipegsilva.components.gitcard :refer [git-projects-roulette]]
    [helix.dom :as d]
    [helix.core :refer [defnc <> $]]))
 
@@ -34,10 +35,11 @@
                        (d/span {:class "lg:text-xl text-2xl py-4 md:tracking-normal tracking-wide"}
                                (d/p
                                 "Software developer who loves low level programming and, now, a rookie in the amazing world of lisp and clojure. Currently under a Computer Science degree at " (d/a {:class "underline hover:text-yellow-600 transition-all duration-75"
-                                                                                                                                                                                                      :target "_blank"} "Unesp")
+                                                                                                                                                                                                      :target "_blank"
+                                                                                                                                                                                                      :href "https://www2.unesp.br"} "Unesp")
                                 ". I love my girlfriend, listening to a really good range of songs, playing and watching soccer, movies and games. "))
-                       (d/span {:class "lg:text-xl text-2xl py-4 md:tracking-normal tracking-wide"}
-                               (d/p ""))
+                       #_(d/span {:class "lg:text-xl text-2xl py-4 md:tracking-normal tracking-wide"}
+                               ($ git-projects-roulette))
 
                        (d/div {:class " flex flex-row h-1/3 justify-start items-center md:space-x-6 "}
                               (d/span {:class "md:space-x-4"}
