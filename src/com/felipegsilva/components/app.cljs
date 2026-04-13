@@ -3,63 +3,65 @@
    [com.felipegsilva.components.line :refer [line-break]]
    [com.felipegsilva.components.svg :as svg]
    [helix.dom :as d]
-   [helix.core :refer [defnc <> $]]))
+   [helix.core :refer [defnc <>  $]]))
 
 (defnc blink []
-  (d/p {:class "hidden md:flex"} ">"))
+  (d/span {:class "hidden md:inline mr-3 select-none"} ">"))
 
 (defnc app [{:keys [is-dark?]}]
-  (d/div {:id "Header"
-          :class "w-full h-full flex flex-col justify-center items-center p-8 transition-all duration-75 "}
-         (d/div {:class "flex flex-row md:h-2/3 h-1/3 justify-center items-center md:space-y-8 space-y-16 "}
-                (d/div {:class "h-full flex flex-col justify-center"}
-                       (d/div {:class "py-4"}
-                              (d/span {:class "flex md:space-x-2 md:text-6xl text-5xl mb-2 "}
-                                      ($ blink)
-                                      (d/h1   "Felipe Gomes da Silva"))
-                              (d/div {:class "flex w-full "}
-                                     (d/span {:class " w-full flex flex-col md:flex-row md:space-x-2 justify-between items-between"}
-                                             (d/span {:class "flex flex-col space-y-2 md:text-md text-xl"}
-                                                     (d/p {:class "italic"} "product engineer at "
-                                                          (d/a {:class "underline transition-all duration-75 hover:text-yellow-600"
-                                                                :target "_blank" :href "https://www.moclojer.com/"} " Moclojer"))
+  (d/section
+   {:id "home"
+    :class "w-full min-h-screen flex flex-col justify-center py-16"}
+   (d/div
+    {:class "flex flex-col space-y-6"}
 
-                                                     (d/p {:class "italic"} "full-stack developer "
-                                                          (d/a {:class "underline transition-all duration-75 hover:text-yellow-600"
-                                                                :target "_blank" :href "https://www.passagemdeonibus.com"} " passagemdeonibus.com")))
-                                             (d/p {:class "italic"} "C, C++, Clojure, Java and Python"))))
+    ;; Name + roles
+    (d/div {}
+           (d/h1 {:class "flex items-center md:text-6xl text-4xl font-bold mb-4"}
+                 ($ blink)
+                 "Felipe Gomes da Silva")
+           (d/div {:class (str "flex flex-col md:flex-row md:items-center md:space-x-3 "
+                               "text-sm md:text-base space-y-1 md:space-y-0 "
+                               (if is-dark? "text-gray-400" "text-gray-500"))}
+                  (d/span {:class "italic"} "Full Stack Developer @ Vinellu")
+                  (d/span {:class "hidden md:inline"} "·")
+                  (d/span {:class "italic"} "CS Undergraduate @ Unesp")
+                  (d/span {:class "hidden md:inline"} "·")
+                  (d/span {} "Sao Jose do Rio Preto, SP, Brasil")))
 
-                       ($ line-break)
+    ;; Divider
+    ($ line-break)
 
-                       (d/span {:class "lg:text-xl text-2xl py-4 md:tracking-normal tracking-wide"}
-                               (d/p
-                                "Software developer who loves low level programming and, now, a rookie in the amazing world of lisp and clojure. Currently under a Computer Science degree at " (d/a {:class "underline hover:text-yellow-600 transition-all duration-75"
-                                                                                                                                                                                                      :target "_blank"} "Unesp")
-                                ". I love my girlfriend, listening to a really good range of songs, playing and watching soccer, movies and games. "))
-                       (d/span {:class "lg:text-xl text-2xl py-4 md:tracking-normal tracking-wide"}
-                               (d/p ""))
+    ;; Bio
+    (d/p {:class "text-base md:text-lg leading-relaxed max-w-2xl"}
+         "Software engineer with a proven track record in high-performance systems and scalable architectures. "
+         "Strong foundation in performance optimization, low-level computing, and concurrency. "
+         "Academic researcher in computer vision and machine learning.")
 
-                       (d/div {:class " flex flex-row h-1/3 justify-start items-center md:space-x-6 "}
-                              (d/span {:class "md:space-x-4"}
-                                      (d/button {:class (str "p-2 border rounded-lg hover:border-yellow-600 hover:text-yellow-600 transition-all duration-75 "
-                                                             (if is-dark?
-                                                               "border-gray-100 "
-                                                               "border-black hover:bg-white "))}
-                                                (d/a {:href "https://github.com/Felipe-gsilva"
-                                                      :target "_blank"
-                                                      :class "space-x-2 flex"}
-                                                     (d/p "github")
-                                                     ($ svg/github)))
-                                      (d/button {:class "underline rounded-lg border-black p-4 hover:text-blue-600 transition-all duration-75"}
-                                                (d/span {:class "flex justify-center items-center"}
-                                                        (d/a
-                                                         {:href "https://www.linkedin.com/in/felipe-gsilva/"
-                                                          :target "_blank"}
-                                                         "linkedin")))
+    ;; Links
+    (d/div {:class "flex flex-row flex-wrap gap-3 pt-2"}
 
-                                      (d/button {:class "underline rounded-lg border-black hover:text-pink-600 transition-all duration-75"}
-                                                (d/span {:class "flex justify-center items-center"}
-                                                        (d/a
-                                                         {:href "https://www.instagram.com/felipe.gsilva_/"
-                                                          :target "_blank"}
-                                                         "instagram")))))))))
+           ;; GitHub
+           (d/a {:href "https://github.com/Felipe-gsilva"
+                 :target "_blank"
+                 :class (str "flex items-center gap-2 px-3 py-2 border rounded-lg text-sm "
+                             "hover:border-yellow-600 hover:text-yellow-600 transition-all duration-75 "
+                             (if is-dark? "border-gray-700" "border-gray-300"))}
+                ($ svg/github)
+                (d/span "GitHub"))
+
+           ;; LinkedIn
+           (d/a {:href "https://www.linkedin.com/in/felipe-gsilva/"
+                 :target "_blank"
+                 :class (str "flex items-center gap-2 px-3 py-2 border rounded-lg text-sm "
+                             "hover:border-blue-500 hover:text-blue-500 transition-all duration-75 "
+                             (if is-dark? "border-gray-700" "border-gray-300"))}
+                ($ svg/linkedin)
+                (d/span "LinkedIn"))
+
+           ;; Email
+           (d/a {:href "mailto:felipe.gsilva@protonmail.com"
+                 :class (str "flex items-center gap-2 px-3 py-2 border rounded-lg text-sm "
+                             "hover:border-yellow-600 hover:text-yellow-600 transition-all duration-75 "
+                             (if is-dark? "border-gray-700" "border-gray-300"))}
+                (d/span "Email"))))))

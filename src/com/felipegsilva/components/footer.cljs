@@ -1,9 +1,8 @@
 (ns com.felipegsilva.components.footer
-  (:require [helix.core :refer [defnc $ <>]]
+  (:require [helix.core :refer [defnc]]
             [helix.dom :as d]))
 
 (defnc footer []
-  (d/div {:class "w-full flex flex-col justify-center items-center p-8 select-none"}
-         (d/div {:class " flex flex-row w-3/4 h-2/3 justify-center items-center space-x-6 space-y-8"}
-                (d/p {:class "text-lg"}"MIT License 2025 - Felipe Gomes da Silva"))))
-
+  (d/footer {:class "w-full flex flex-col justify-center items-center py-8 px-4 select-none border-t border-gray-800 dark:border-gray-800"}
+            (d/p {:class "text-sm text-gray-500"}
+                 "MIT License 2025 - Felipe Gomes da Silva")))
