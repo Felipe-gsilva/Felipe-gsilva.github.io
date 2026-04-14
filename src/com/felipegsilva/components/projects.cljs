@@ -8,6 +8,7 @@
     :url "https://github.com/felipe-gsilva/ann-architectures"
     :year "2026"
     :description "Functional Library of default artificial neural networks implementations, focused on reproducibility and result comparisons"
+    :tags ["Python" "Torch" "Numpy" "Pandas"]
     }
    {:name "Claquete"
     :subtitle "Hybrid Recommendation Engine"
