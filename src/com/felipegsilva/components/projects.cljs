@@ -3,7 +3,13 @@
             [helix.dom :as d]))
 
 (def projects-data
-  [{:name "Claquete"
+  [{:name "ANN Architectures"
+    :subtitle "ANN Python Library"
+    :url "https://github.com/felipe-gsilva/ann-architectures"
+    :year "2026"
+    :description "Functional Library of default artificial neural networks implementations, focused on reproducibility and result comparisons"
+    }
+   {:name "Claquete"
     :subtitle "Hybrid Recommendation Engine"
     :url "https://github.com/luminal-solutions/claquete"
     :year "2026"
